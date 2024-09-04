@@ -1,1 +1,1 @@
-StatusService: uvicorn main:app --host 34.168.253.122 --port $PORT
+StatusService: uvicorn main:app --host 0.0.0.0 --port $PORT
