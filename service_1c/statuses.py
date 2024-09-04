@@ -52,3 +52,7 @@ class Statuses(HTTPSession):
         data = models.HistoryModel.model_validate(data)
         response = await self.post_request(data=data.model_dump())
         return response
+
+
+statuses = Statuses()
+

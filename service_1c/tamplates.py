@@ -89,3 +89,9 @@ class MessageTemplate:
                 message = (f"Ваш заказ №{self.number} отменен. Нам очень жаль. Надеемся,\n"
                            f"на скорую встречу.")
                 return message
+
+
+def flyers_template(flyer):
+    template = (f"флаеры: {flyer['flyers']}\n"
+                f"фишки: {flyer['chips']}")
+    return template
