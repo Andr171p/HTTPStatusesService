@@ -21,10 +21,10 @@ def extract_orders_data(response):
         return -1
 
 
-# import requests
+'''import requests
 
 
-'''data = {
+data = {
     'telefon': '89199350914'
 }
 r = requests.post("https://statusservice-production.up.railway.app/api/statuses/user_flyers/", json=data)
