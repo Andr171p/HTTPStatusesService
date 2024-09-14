@@ -54,3 +54,10 @@ class StatusAPI(HTTPSession):
 
 
 status_api = StatusAPI()
+
+
+import asyncio
+
+
+f = asyncio.run(status_api.flyer_response("89829764729"))
+print(f)

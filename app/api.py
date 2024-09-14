@@ -43,7 +43,7 @@ async def get_user_order(telefon: APICreateRequest) -> JSONResponse:
 @router.post("/user_flyers/")
 async def get_user_flyers(telefon: APICreateRequest) -> JSONResponse:
     flyer = await status_api.flyer_response(telefon=telefon.telefon)
-    message = flyers_template(flyer=flyer)
+    message = flyers_template(flyer=flyer['data'])
     return JSONResponse(
         content={
             "status": "ok",
