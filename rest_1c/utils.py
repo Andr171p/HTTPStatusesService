@@ -2,7 +2,7 @@ import json
 
 import logging
 
-from service_1c.config import RequestLoggingMessage
+from rest_1c.settings.logs import RequestLoggingMessage
 
 
 request_logging = RequestLoggingMessage()

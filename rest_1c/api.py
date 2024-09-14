@@ -1,15 +1,14 @@
-from service_1c.http_session import HTTPSession
-from service_1c.config import RequestData, RequestHeaders
-from service_1c import models
-from service_1c.utils import extract_orders_data
+from rest_1c.server.http_session import HTTPSession
+from rest_1c.settings.parameters import RequestData, RequestHeaders
+from rest_1c import models
+from rest_1c.utils import extract_orders_data
 
 from misc.format_data import format_telefon
 
 
-class Statuses(HTTPSession):
-    def __init__(self):
-        self.request_headers = RequestHeaders()
-        self.request_data = RequestData()
+class StatusAPI(HTTPSession):
+    request_headers = RequestHeaders()
+    request_data = RequestData()
 
     async def order_response(self, telefon: str):
         telefon = format_telefon(telefon=telefon)
@@ -54,5 +53,4 @@ class Statuses(HTTPSession):
         return response
 
 
-statuses = Statuses()
-
+status_api = StatusAPI()

@@ -1,6 +1,6 @@
 import uvicorn
 
-from app.root import app
+from app.create import app
 
 
 if __name__ == '__main__':

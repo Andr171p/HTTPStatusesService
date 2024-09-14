@@ -2,7 +2,8 @@ import aiohttp
 
 import logging
 
-from service_1c.config import RequestHeaders, RequestLoggingMessage
+from rest_1c.settings.parameters import RequestHeaders
+from rest_1c.settings.logs import RequestLoggingMessage
 
 
 class HTTPSession(RequestHeaders):

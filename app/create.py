@@ -8,7 +8,7 @@ app = FastAPI(
 )
 
 app.include_router(
-    router,
+    router=router,
     prefix="/api/statuses",
     tags=["statuses"]
 )

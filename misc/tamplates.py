@@ -12,7 +12,7 @@ class StatusMessage:
 
 
 class MessageTemplate:
-    def __init__(self, order):
+    def __init__(self, order: dict) -> None:
         self.status = order['status']
         self.number = order['number']
         self.delivery_time_from = order['delivery_time_from']
@@ -91,7 +91,7 @@ class MessageTemplate:
                 return message
 
 
-def flyers_template(flyer):
+def flyers_template(flyer) -> str:
     template = (f"флаеры: {flyer['flyers']}\n"
                 f"фишки: {flyer['chips']}")
     return template

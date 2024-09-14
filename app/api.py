@@ -1,8 +1,10 @@
-from fastapi import APIRouter, status
+from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 
-from service_1c.statuses import statuses
-from service_1c.tamplates import (
+from rest_1c.api import status_api
+
+from misc.message_utils import order_to_message
+from misc.tamplates import (
     MessageTemplate,
     flyers_template
 )
@@ -26,9 +28,9 @@ async def get_hello_world() -> JSONResponse:
 @router.post("/user_orders/")
 async def get_user_order(telefon: APICreateRequest) -> JSONResponse:
     data = []
-    orders = await statuses.order_response(telefon=telefon.telefon)
-    for order in orders['data']['orders']:
-        message = MessageTemplate(order=order).message()
+    orders = await status_api.order_response(telefon=telefon.telefon)
+    messages = map(order_to_message, orders['data']['orders'])
+    for message in messages:
         data.append(message)
     return JSONResponse(
         content={
@@ -40,7 +42,7 @@ async def get_user_order(telefon: APICreateRequest) -> JSONResponse:
 
 @router.post("/user_flyers/")
 async def get_user_flyers(telefon: APICreateRequest) -> JSONResponse:
-    flyer = await statuses.flyer_response(telefon=telefon.telefon)
+    flyer = await status_api.flyer_response(telefon=telefon.telefon)
     message = flyers_template(flyer=flyer)
     return JSONResponse(
         content={
