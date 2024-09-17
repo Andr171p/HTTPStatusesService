@@ -4,10 +4,7 @@ from fastapi.responses import JSONResponse
 from rest_1c.api import status_api
 
 from misc.message_utils import order_to_message
-from misc.tamplates import (
-    MessageTemplate,
-    flyers_template
-)
+from misc.tamplates import flyers_template
 
 from app.schemas import APICreateRequest
 

@@ -19,13 +19,3 @@ def extract_orders_data(response):
     else:
         logging.warning(request_logging.none_json_response)
         return -1
-
-
-'''import requests
-
-
-data = {
-    'telefon': '89199350914'
-}
-r = requests.post("https://statusservice-production.up.railway.app/api/statuses/user_flyers/", json=data)
-print(r.json())'''
